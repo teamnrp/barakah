@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	input,
+	textarea,
+	label {
+		font-family: var(--font-family);
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+b,
+strong {
+	font-weight: 600;
+}
+
+.container {
+	width: 100%;
+	max-width: 1220px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+@include generate-paddings-options(6);
+@include generate-margin-options(6);
+
+@media (max-width: 767px) {
+	.container {
+		padding: 0 12px;
+	}
+
+	.toast-container {
+		bottom: 0px !important;
+		height: 100px;
+	}
+}

@@ -1,0 +1,237 @@
+// Media Query
+$ex-small-screen-up: 576px !default;
+$small-screen-up: 768px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1200px !default;
+$small-screen: 767px !default;
+$medium-screen: 992px !default;
+$large-screen: 1199px !default;
+$extreme-large-screen: 1600px !default;
+$medium-and-up: 'only screen and (min-width : #{$small-screen-up})' !default;
+$large-and-up: 'only screen and (min-width : #{$medium-screen-up})' !default;
+$small-and-down: 'only screen and (max-width : #{$small-screen-up})' !default;
+$medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
+$medium-only: 'only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})' !default;
+$extra-large-and-up: 'only screen and (min-width : #{$large-screen})' !default;
+$large-and-down: 'only screen and (max-width : #{$large-screen})' !default;
+$extreme-large-and-up: 'only screen and (min-width : #{$extreme-large-screen})' !default;
+
+// Grid
+$grid-col: 12 !default;
+$grid-gutter: 20px !default;
+
+// layout
+$margin-step: 5 !default;
+$padding-step: 5 !default;
+
+// Button
+$button-base-height: 36px !default;
+$button-base-font: 14px !default;
+
+// Typography
+@mixin typography {
+	--font-family: 'Satoshi', sans-serif;
+	--body-font-size: 14px;
+	--body-line-height: 1.28;
+}
+
+// Gradient
+@mixin gradient {
+	--gradient-sky-blue: linear-gradient(87.64deg, #bfdbfe 0%, #93c5fd 100%);
+	--gradient-blue-green-light: linear-gradient(87.64deg, #bfdbfe 0%, #bbf7d0 100%);
+	--gradient-sea-blue: linear-gradient(87.64deg, #2563eb 0%, #60a5fa 100%);
+	--gradient-blue-green-shallow: linear-gradient(87.64deg, #60a5fa 0%, #86efac 100%);
+	--gradient-blue-green-deep: linear-gradient(87.64deg, #2563eb 0%, #4ade80 100%);
+	--gradient-green-blue-deep: linear-gradient(259.26deg, #006efa 0%, #07cdbe 84.05%);
+}
+
+// Colors
+@mixin colors {
+	--black: #000;
+	--white: #fff;
+	--neutral: #334155;
+	--neutral-dark: #0f172a;
+	--neutral-light1: #64748b;
+	--neutral-light2: #94a3b8;
+	--neutral-light3: #cbd5e1;
+	--neutral-light4: #e2e8f0;
+	--neutral-light5: #f1f5f9;
+	--neutral-light6: #f8fafc;
+	--primary: #006efa;
+	--primary-dark: #1d4ed8;
+	--primary-light1: #3b82f6;
+	--primary-light2: #83b7fa;
+	--primary-light3: #e0f0ff;
+	--primary-light4: #eff6ff;
+	--green: #06963c;
+	--green-light1: #00b256;
+	--green-light2: #22c55e;
+	--green-light3: #4ade80;
+	--green-light4: #dcfce7;
+	--green-light5: #f0fdf4;
+	--orange: #dc6803;
+	--orange-light1: #f28900;
+	--orange-light2: #fdb022;
+	--orange-light3: #fec84b;
+	--orange-light4: #fef3c7;
+	--orange-light5: #fefce8;
+	--red: #be123c;
+	--red-light1: #e11d48;
+	--red-light2: #f43f5e;
+	--red-light3: #fb7185;
+	--red-light4: #ffe4e6;
+	--red-light5: #fff1f2;
+	--teal: #00afcd;
+	--teal-light1: #4dc7dc;
+	--teal-light2: #99dfeb;
+	--teal-light3: #e5f7fa;
+	--teal-light4: #f2fbfc;
+}
+
+// Font weights
+$light: 300;
+$regular: 400;
+$bold: 600;
+
+// Grid Variables
+$num-cols: 12 !default;
+$gutter-width: 20px !default;
+$element-top-margin: calc($gutter-width / 3) !default;
+$element-bottom-margin: calc(($gutter-width * 2) / 3) !default;
+
+// Colors
+$black87: rgba(black, 0.87) !default;
+$black70: rgba(black, 0.70) !default;
+$black54: rgba(black, 0.54) !default;
+$black37: rgba(black, 0.37) !default;
+$black24: rgba(black, 0.24) !default;
+$black08: rgba(black, 0.08) !default;
+$white87: rgba(white, 0.87) !default;
+$white70: rgba(white, 0.70) !default;
+$white54: rgba(white, 0.54) !default;
+$white37: rgba(white, 0.37) !default;
+$white24: rgba(white, 0.24) !default;
+$white: #ffffff;
+$black: #000000;
+$ofbGreen: #20BEB3 !default;
+$ofbDarkBlue: #0070D2 !default;
+$ofbBlue: #437198;
+$offWhite: #f6f6f6;
+$red: #FA3365;
+$primaryColor: #20BEB3 !default;
+
+$color-master: #626262;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-success: #5cb85c;
+$color-info: #5bc0de;
+$color-warning: #ffbb33;
+$color-danger: 	#d9534f;
+$color-text: #64748B;
+$color-primary: #4285F4;
+$color-secondary: #DDA122;
+$color-complete: #2BBBAD;
+$color-ofb-green: #26a69a;
+$color-ofb-blue: #16325C;
+$color-ofbBlue-hover: #198cf0;
+
+//Mixing Color varriable for creating both light and dark colors
+$mix-percentage-dark: 81%;
+$mix-percentage-darker: 60%;
+$mix-percentage-light: 80%;
+$mix-percentage-lighter: 20%;
+
+//Lighter colors
+$color-success-light: mix($color-success, $color-white, $mix-percentage-light);
+$color-success-lighter: mix($color-success, $color-white, $mix-percentage-lighter);
+
+$color-complete-light: mix($color-complete, $color-white, $mix-percentage-light);
+$color-complete-lighter: mix($color-complete, $color-white, $mix-percentage-lighter);
+
+$color-primary-light: mix($color-primary, $color-white, $mix-percentage-light);
+$color-primary-lighter: mix($color-primary, $color-white, $mix-percentage-lighter);
+
+$color-warning-light: mix($color-warning, $color-white, $mix-percentage-light);
+$color-warning-lighter: mix($color-warning, $color-white, $mix-percentage-lighter);
+
+$color-danger-light: mix($color-danger, $color-white, $mix-percentage-light);
+$color-danger-lighter: mix($color-danger, $color-white, $mix-percentage-lighter);
+
+$color-info-light: mix($color-info, $color-white, $mix-percentage-light);
+$color-info-lighter: mix($color-info, $color-white, $mix-percentage-lighter);
+
+//Darker colors
+$color-success-dark: mix($color-success, $color-black, $mix-percentage-dark);
+$color-success-darker: mix($color-success, $color-black, $mix-percentage-darker);
+
+$color-complete-dark: mix($color-complete, $color-black, $mix-percentage-dark);
+$color-complete-darker: mix($color-complete, $color-black, $mix-percentage-darker);
+
+$color-primary-dark: mix($color-primary, $color-black, $mix-percentage-dark);
+$color-primary-darker: mix($color-primary, $color-black, $mix-percentage-darker);
+
+$color-warning-dark: mix($color-warning, $color-black, $mix-percentage-dark);
+$color-warning-darker: mix($color-warning, $color-black, $mix-percentage-darker);
+
+$color-danger-dark: mix($color-danger, $color-black, $mix-percentage-dark);
+$color-danger-darker: mix($color-danger, $color-black, $mix-percentage-darker);
+
+$color-info-dark: mix($color-info, $color-black, $mix-percentage-dark);
+$color-info-darker: mix($color-info, $color-black, $mix-percentage-darker);
+
+// Lighter Grey colors
+$color-master-light:mix($color-master, #fff, 16%);
+$color-master-lighter:mix($color-master, #fff, 9.5%);
+$color-master-lightest:mix($color-master, #fff, 3%);
+
+// Darker Grey colors
+$color-master-dark:mix($color-master, #000, 45%);
+$color-master-darker:mix($color-master, #000, 27%);
+$color-master-darkest:mix($color-master, #000, 18%);
+
+$color-menu: #2d353c;
+$color-menu-header: #6d7983;
+$color-menu-darker: #6d7983;
+$color-menu-link-hover: #232a2f;
+
+$body-background: #FAFAFA;
+$body-color: #707478;
+$body-font-size: 13px;
+$body-font-family: 'Inter', sans-serif;
+
+$color-form-boder: #ccd0d4;
+$color-form-hover: #9fa2a5;
+
+// Black Color Variations
+$color-black-87: rgba(0,0,0,0.87);
+$color-black-54: rgba(0,0,0,0.54);
+$color-black-03: rgba(0,0,0,0.03);
+
+// Layout Settings
+$sidebar-width: 220px;
+
+// background color
+$bgColor-blue: #F4F6FC;
+
+// border color
+$border-color: #a8b7c7;
+$border-color-light: #d8dde6;
+
+$primary-color: #006EFA;
+$heading-color: #0F172A;
+$text-color: #334155;
+$white: #FFFFFF;
+$border-color:#E2E8F0;
+$black: #000000;
+$color-ofb-blue: #16325C;
+$ofbDarkBlue: #0070D2 !default;
+$ofbGreen: #20BEB3 !default;
+$danger-color: #fa3365;
+
+$font-tiny: 12px;
+$font-small: 14px;
+$font-medium: 16px;
+$font-large: 18px;
+$font-x-large: 20px;
+
+

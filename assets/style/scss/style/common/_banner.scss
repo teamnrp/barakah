@@ -1,0 +1,181 @@
+
+
+.bannerContainer {
+    background-color: #3B3B3B;
+    padding: 70px 0 0 0;
+    margin-bottom: 40px;
+    @media (max-width: $small-screen-up) {
+        margin-bottom: 15px;
+        padding: 40px 0 16px 0;
+        &.homeBanner {
+            padding: 70px 0 16px 0;
+        }
+    }
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background: #EBEBEB;
+        z-index: 0;
+        @media (max-width: $small-screen-up) {
+            display: none;
+        }
+    }
+    .bannerBlock {
+        position: relative;
+        z-index: 1;
+        
+        .imageBlock {
+            margin: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            &.contactBanner {
+                @media (max-width: $small-screen-up) {
+                    height: 210px;
+                }    
+            }
+            @media (max-width: $small-screen-up) {
+                height: 460px;
+                img {
+                    max-width: none;
+                    height: 100%;
+                }
+            }
+        }
+
+        .bannerContent {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            &.innerBanner {
+                top: -10px;
+            }
+            @media (min-width: $medium-screen) {
+                top: -20px;
+            }
+
+            .titleBlock {
+                margin: 0;
+                .heading {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &.showInMobile {
+                        display: flex !important;
+                        @media (min-width: $small-screen-up) {
+                            display: none !important;
+                        }
+                    }
+                    
+                    &.hideInMobile {
+                        display: none !important;
+                        @media (min-width: $small-screen-up) {
+                            display: flex !important;
+                        }
+                    }
+                    .headingText {
+                        color: #FFFFFF;
+                        background-color: #3B3B3B;
+                        border-radius: 0 0 15px 0;
+                        font-size: 28px;
+                        line-height: 40px;
+                        font-weight: 600;
+                        padding: 0px 30px 10px 0;
+                        @media (min-width: $medium-screen) {
+                            font-size: 50px;
+                            line-height: 84px;
+                        }
+                    }
+                }
+            }
+
+            .btnBlock {
+                padding: 10px 30px 30px 0;
+                background-color: #3B3B3B;
+                border-radius: 0 0 15px 0;
+                display: inline-block;
+                &.showInMobile {
+                    display: flex !important;
+                    @media (min-width: $small-screen-up) {
+                        display: none !important;
+                    }
+                }
+                
+                &.hideInMobile {
+                    display: none !important;
+                    @media (min-width: $small-screen-up) {
+                        display: inline-block !important;
+                    }
+                }
+
+                .btn {
+                    border-radius: 4px;
+                    border: 1px solid #FFF;
+                    background: #FFF;
+                    box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+                    display: flex;
+                    gap: 0 10px;
+                    color: #000;
+                }
+            }
+        }
+
+        .btnBlock {
+            padding: 20px 0px 20px 0;
+            background-color: #3B3B3B;
+            border-radius: 0 0 15px 0;
+            display: flex;
+            justify-content: center;
+            &.showInMobile {
+                display: flex !important;
+                @media (min-width: $small-screen) {
+                    display: none !important;
+                }
+            }
+            
+            &.hideInMobile {
+                display: none !important;
+                @media (min-width: $small-screen) {
+                    display: block !important;
+                }
+            }
+
+            .btn {
+                border-radius: 4px;
+                border: 1px solid #FFF;
+                background: #FFF;
+                box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+                display: flex;
+                gap: 0 10px;
+                color: #000;
+            }
+        }
+
+        .textBlock {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 14px;
+            @media (min-width: $small-screen) {
+                padding: 40px;
+            }
+            .text {
+                color: #FFF;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+                margin: 0;
+                @media (min-width: $small-screen) {
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+}

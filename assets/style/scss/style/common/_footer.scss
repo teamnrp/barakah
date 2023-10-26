@@ -1,0 +1,81 @@
+.footerContainer {
+    @media (min-width: $small-screen) {
+        padding-bottom: 30px;
+    }
+    .footer {
+        overflow: hidden;
+        background: #3B3B3B;
+        margin: 0 -16px;
+        @media (min-width: $small-screen) {
+            border-radius: 20px;
+            margin: 0;
+        }
+
+        .footerContent {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px 30px;
+            padding: 16px 20px;
+            @media (min-width: $small-screen) {
+                padding: 40px;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .navColumn {
+                .title {
+                    position: relative;
+                    color: $white;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 22px;
+                    margin-bottom: 40px;
+                    @media (min-width: $small-screen) {
+                        font-size: 24px;
+                        line-height: 28px;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -18px;
+                        left: 0;
+                        width: 90px;
+                        height: 6px;
+                        border-radius: 100px;
+                        background: #E8BF69;
+                    }
+                }
+
+                .footerNavList {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px 0;
+
+                    .footerLink {
+                        color: $white;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 24px;
+                        margin: 0;
+                        @media (min-width: $small-screen) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .copyright  {
+            color: #000;
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 21px;
+            background: #E8BF69;
+            padding: 8px 10px;
+        }
+    }
+}

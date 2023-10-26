@@ -1,0 +1,51 @@
+.sectionContainer.contactPage {
+    display: block;
+}
+
+.contactList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 54px 32px;
+    @media (min-width: $small-screen) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contactCard {
+        overflow: hidden;
+        background: #FFF;
+        display: flex;
+        gap: 0 22px;
+
+        .contentBlock {
+            width: calc(100% - 72px);
+        }
+    
+        .imageBlock {
+            height: 50px;
+            width: 50px;
+            border-radius: 2px;
+            background: #E8BF69;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            
+        }
+
+        .contactLabel {
+            color: #0F172A;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 22px;
+        }
+
+        .contactValue {
+            color: #64748B;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+        }
+    }
+}

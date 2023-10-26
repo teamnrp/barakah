@@ -1,0 +1,199 @@
+@mixin placeholder($color, $fontWeight) {
+	&::placeholder {
+		color: $color;
+		font-weight: $fontWeight;
+		opacity: 1;
+	}
+
+	&:input-placeholder {
+		color: $color;
+		font-weight: $fontWeight;
+		opacity: 1;
+	}
+
+	&::input-placeholder {
+		color: $color;
+		font-weight: $fontWeight;
+		opacity: 1;
+	}
+}
+
+@mixin generate-paddings-options($n, $j: 0) {
+	@if $j <=$n {
+		@for $i from $j through $n {
+			$step: $i * $padding-step;
+
+			.p-t-#{$step} {
+				padding-top: ($step * 1px);
+			}
+
+			.p-r-#{$step} {
+				padding-right: ($step * 1px);
+			}
+
+			.p-l-#{$step} {
+				padding-left: ($step * 1px);
+			}
+
+			.p-b-#{$step} {
+				padding-bottom: ($step * 1px);
+			}
+
+			.padding-#{$step} {
+				padding: ($step * 1px);
+			}
+		}
+	}
+}
+
+@mixin generate-margin-options($n, $j: 0) {
+	@if $j <=$n {
+		@for $i from $j through $n {
+			$step: $i * $margin-step;
+
+			.m-t-#{$step} {
+				margin-top: ($step * 1px);
+			}
+
+			.m-r-#{$step} {
+				margin-right: ($step * 1px);
+			}
+
+			.m-l-#{$step} {
+				margin-left: ($step * 1px);
+			}
+
+			.m-b-#{$step} {
+				margin-bottom: ($step * 1px);
+			}
+		}
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@function is-transparent($color) {
+	@return transparent==$color;
+}
+
+@function is-white($color) {
+	@return var(--white) ==$color;
+}
+
+.btn-base {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background: transparent;
+	box-shadow: none;
+	cursor: pointer;
+	font-weight: 500;
+	outline: none;
+	touch-action: manipulation;
+	transition: all 200ms ease;
+	user-select: none;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+.btn {
+	@extend .btn-base;
+}
+
+@mixin btn-size() {
+	min-height: $button-base-height;
+	padding: 2px 24px;
+	font-size: $button-base-font;
+	gap: 15px;
+	line-height: 1.57;
+
+	&.xs {
+		min-height: $button-base-height - 8px;
+		padding: 2px 8px;
+		font-size: $button-base-font - 2px;
+	}
+
+	&.s {
+		min-height: $button-base-height - 4px;
+		padding: 2px 16px;
+		font-size: $button-base-font - 2px;
+	}
+
+	&.l {
+		min-height: $button-base-height + 4px;
+		padding: 2px 24px;
+		font-size: $button-base-font + 2px;
+	}
+
+	&.xl {
+		min-height: $button-base-height + 8px;
+		padding: 2px 24px;
+		font-size: $button-base-font + 2px;
+	}
+
+	&.xxl {
+		min-height: $button-base-height + 12px;
+		padding: 2px 24px;
+		font-size: $button-base-font + 4px;
+	}
+}
+
+@mixin btn($background, $border-color, $color, $hover, $active) {
+	@extend .btn-base;
+	@include btn-size;
+
+	border-color: $border-color;
+	background: $background;
+	color: $color;
+
+	&:hover {
+		background: $hover;
+
+		@if not(is-transparent($background)) {
+			border-color: $hover;
+		}
+	}
+
+	&:focus,
+	&:active {
+		background: $active;
+
+		@if not(is-transparent($background)) {
+			border-color: $active;
+		}
+	}
+
+	&:disabled {
+		@if is-transparent($background) {
+			background: transparent;
+		} @else {
+			background: var(--neutral-light3);
+		}
+
+		@if is-transparent($border-color) {
+			border-color: transparent;
+		} @else {
+			border-color: var(--neutral-light3);
+		}
+
+		@if is-white($color) {
+			color: $color;
+		} @else {
+			color: var(--neutral-light3);
+		}
+
+		&:focus,
+		&:active {
+			box-shadow: none;
+		}
+	}
+}

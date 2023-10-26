@@ -1,0 +1,137 @@
+.sectionContainer.productPage {
+    display: block;
+}
+
+.productList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+    .productCard {
+        padding: 24px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #E2E8F0;
+        background: #FFF;
+        display: flex;
+        flex-direction: column;
+        
+        @media (min-width: $small-screen) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &:nth-child(even) {
+            background-color: #3B3B3B;
+            @media (min-width: $small-screen) {
+                flex-direction: row-reverse;
+            }
+        }
+    
+        .imageBlock {
+            min-height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #F1F5F9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 24px;
+            @media (min-width: $small-screen) {
+                width: 360px;
+            }
+        }
+
+        .slideContent {
+            @media (min-width: $small-screen) {
+                width: calc(100% - 380px);
+            }
+        }
+    
+        .titleBlock {
+            justify-content: flex-start;
+            margin-bottom: 36px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -18px;
+                left: 0;
+                width: 90px;
+                height: 6px;
+                border-radius: 100px;
+                background: #E8BF69;
+            }
+            .h3 {
+                font-size: 24px;
+                font-weight: 700;
+                color: #0F172A;
+                line-height: 28px;
+            }
+        }
+    
+        .textBlock {
+            height: 75px;
+            overflow: hidden;
+            margin: 16px 0;
+            .text {
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 500;
+                color: #334155;
+                margin: 0;
+            }
+            &.showText {
+                height: auto;
+            }
+        }
+
+        &:nth-child(even) {
+            .titleBlock {
+                .h3 {
+                    color: #FFF;
+                }
+            }
+            .textBlock {
+                .text{
+                    color: #FFF;
+                }
+            }
+        }
+    
+        .btnBlock {
+            .btn-lnk {
+                color: #DDA122;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 500;
+                background: transparent;
+                border: 0;
+                box-shadow: none;
+                padding: 0;
+                &.hide {
+                    display: none !important;
+                }
+                .more {
+                    display: inline-block;
+                }
+                .less {
+                    display: none;
+                }
+
+                &.active {
+                    .more {
+                        display: none;
+                    }
+                    .less {
+                        display: inline-block;
+                    }
+                    img {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+        }
+    }
+}

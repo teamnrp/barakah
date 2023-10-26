@@ -1,0 +1,78 @@
+#app-body {
+    .flex {
+        display: flex;
+    }
+    
+    .inline-flex {
+        display: inline-flex;
+    }
+    
+    .flex,
+    .inline-flex {
+        &.dir-col {
+            flex-direction: column;
+        }
+    
+        &.col-rev {
+            flex-direction: column-reverse;
+        }
+    
+        &.aln {
+            &-start {
+                align-items: flex-start;
+            }
+    
+            &-center {
+                align-items: center;
+            }
+    
+            &-end {
+                align-items: flex-end;
+            }
+    
+            &-baseline {
+                align-items: baseline;
+            }
+        }
+    
+        &.jfy {
+            &-center {
+                justify-content: center;
+            }
+    
+            &-sp-around {
+                justify-content: space-around;
+            }
+    
+            &-sp-btw {
+                justify-content: space-between;
+            }
+    
+            &-sp-even {
+                justify-content: space-evenly;
+            }
+    
+            &-end {
+                justify-content: flex-end;
+            }
+        }
+    
+        &-one {
+            flex: 1;
+        }
+    
+        &.wrap {
+            flex-wrap: wrap;
+        }
+    }
+    
+    @media only screen and (max-width: 820px) {
+    
+        .flex,
+        .inline-flex {
+            &.colm {
+                flex-direction: column;
+            }
+        }
+    }
+}

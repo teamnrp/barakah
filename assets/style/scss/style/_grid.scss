@@ -1,0 +1,125 @@
+@use 'sass:math';
+
+.row {
+	display: flex;
+	flex: 0 1 auto;
+	flex-flow: row wrap;
+	align-items: stretch;
+	margin-right: calc(-1 * $grid-gutter / 2);
+	margin-left: calc(-1 * $grid-gutter / 2);
+	gap: $grid-gutter 0;
+
+	.col {
+		padding: 0 calc($grid-gutter / 2);
+
+		$i: 1;
+
+		@while $i <=$grid-col {
+			$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+			&.s#{$i} {
+				width: $perc;
+				max-width: $perc;
+				flex-basis: $perc;
+			}
+
+			$i: $i + 1;
+		}
+
+		$i: 1;
+
+		@while $i <=$grid-col {
+			$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+			&.offset-s#{$i} {
+				margin-left: $perc;
+			}
+
+			$i: $i + 1;
+		}
+
+		@media #{$medium-and-up} {
+			$i: 1;
+
+			@while $i <=$grid-col {
+				$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+				&.m#{$i} {
+					width: $perc;
+					max-width: $perc;
+					flex-basis: $perc;
+				}
+
+				$i: $i + 1;
+			}
+
+			$i: 1;
+
+			@while $i <=$grid-col {
+				$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+				&.offset-m#{$i} {
+					margin-left: $perc;
+				}
+
+				$i: $i + 1;
+			}
+		}
+
+		@media #{$large-and-up} {
+			$i: 1;
+
+			@while $i <=$grid-col {
+				$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+				&.l#{$i} {
+					width: $perc;
+					max-width: $perc;
+					flex-basis: $perc;
+				}
+
+				$i: $i + 1;
+			}
+
+			$i: 1;
+
+			@while $i <=$grid-col {
+				$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+				&.offset-l#{$i} {
+					margin-left: $perc;
+				}
+
+				$i: $i + 1;
+			}
+		}
+
+		@media #{$extra-large-and-up} {
+			$i: 1;
+
+			@while $i <=$grid-col {
+				$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+				&.xl#{$i} {
+					width: $perc;
+					max-width: $perc;
+					flex-basis: $perc;
+				}
+
+				$i: $i + 1;
+			}
+
+			$i: 1;
+
+			@while $i <=$grid-col {
+				$perc: (math.div(100, math.div($grid-col, $i))) * 1%;
+
+				&.offset-xl#{$i} {
+					margin-left: $perc;
+				}
+
+				$i: $i + 1;
+			}
+		}
+	}
+}
