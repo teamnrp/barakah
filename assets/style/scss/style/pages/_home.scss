@@ -9,7 +9,7 @@
         border-radius: 20px;
         overflow: hidden;
         display: grid;
-        gap: 20px 40px;
+        gap: 20px 90px;
         justify-content: space-between;
         grid-template-columns: 1fr 1fr;
         @media (max-width: $small-screen-up) {
@@ -63,10 +63,21 @@
                     background: #E8BF69;
                     @media (max-width: $small-screen-up) {
                         bottom: -12px;
+                        width: 60px;
+                        height: 4px;
                     }
                 }
             }
             .textBlock {
+                .h3 {
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 24px;
+                    @media (min-width: $small-screen) {
+                        font-size: 24px;
+                        line-height: 28px;
+                    }
+                }
                 .text {
                     color: $color-text;
                     margin: 0;
@@ -110,18 +121,26 @@
                 display: flex;
                 justify-content: center;
                 position: relative;
-                margin-bottom: 75px;
+                margin-bottom: 42px;
+                @media (min-width: $small-screen) {
+                    margin-bottom: 75px;
+                }
 
                 &::after {
                     content: "";
                     position: absolute;
-                    bottom: -18px;
+                    bottom: -12px;
                     left: 50%;
                     transform: translate(-50%, 0);
-                    width: 90px;
-                    height: 6px;
+                    width: 60px;
+                    height: 4px;
                     border-radius: 100px;
                     background: #E8BF69;
+                    @media (min-width: $small-screen) {
+                        width: 90px;
+                        height: 6px;
+                        bottom: -18px;
+                    }
                 }
             }
 
@@ -132,6 +151,7 @@
                     .text {
                         max-height: 75px;
                         overflow: hidden;
+                        margin: 0 0 8px;
                     }
                 }
             }
@@ -146,6 +166,16 @@
                     display: flex;
                     align-items: center;
                     gap: 0 10px;
+                    width: 100%;
+                    height: 40px;
+                    &:hover {
+                        background-color: #FFFFFF;
+                        border: 1px solid #FFFFFF;
+                    }
+                    @media (min-width: $small-screen) {
+                        width: 328px;
+                        height: 50px;
+                    }
                 }
             }
         }
@@ -180,31 +210,43 @@
             display: block;
             .titleBlock {
                 display: flex;
-                justify-content: center;
                 position: relative;
-                margin-bottom: 75px;
+                margin-bottom: 42px;
+                @media (min-width: $small-screen) {
+                    justify-content: center;
+                }
 
                 &::after {
                     content: "";
                     position: absolute;
                     bottom: -18px;
-                    left: 50%;
-                    transform: translate(-50%, 0);
-                    width: 90px;
-                    height: 6px;
+                    left: 0;
+                    width: 60px;
+                    height: 4px;
                     border-radius: 100px;
                     background: #E8BF69;
+                    @media (min-width: $small-screen) {
+                        width: 90px;
+                        height: 6px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                    }
                 }
             }
 
             .textBlock {
                 .text {
                     color: #64748B;
-                    text-align: center;
-                    font-size: 18px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 500;
-                    line-height: 28px;
+                    line-height: 24px;
+                    margin: 0;
+                    @media (min-width: $small-screen) {
+                        text-align: center;
+                        font-size: 18px;
+                        line-height: 28px;
+                    }
                 }
             }
         }
@@ -232,34 +274,21 @@
             height: 40px;
             border-radius: 100%;
             overflow: hidden;
-            // background: rgba(255, 255, 255, 0.30);
-            background: #E8BF69;
+            background-color: #E8BF69;
+            background-image: url('../images/arrow_forward.png');
+            background-repeat: no-repeat;
+            background-position: center;
             position: absolute;
             top: 50%;
             border: 0;
-            &::after {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 14px;
-                height: 14px;
-                border-style: solid;
-                border-width: 2px;
-                border-color: transparent #000 #000 transparent;
-            }
+            
             &.slick-prev {
                 left: -24px;
-                &::after {
-                    transform: translate(-30%, -50%) rotate(135deg);
-                }
+                transform: rotate(180deg);
             }
 
             &.slick-next {
                 right: -24px;
-                &::after {
-                    transform: translate(-70%, -50%) rotate(-45deg);
-                }
             }
         }
 
@@ -305,16 +334,23 @@
 
                 .titleBlock {
                     justify-content: flex-start;
-                    margin-bottom: 36px;
+                    margin-bottom: 28px;
+                    @media (min-width: $small-screen) {
+                        margin-bottom: 36px;
+                    }
                     &::after {
                         left: 0;
                         transform: translate(0, 0);
                     }
                     .h3 {
-                        font-size: 24px;
+                        font-size: 18px;
                         font-weight: 700;
                         color: #0F172A;
-                        line-height: 28px;
+                        line-height: 22px;
+                        @media (min-width: $small-screen) {
+                            font-size: 24px;
+                            line-height: 28px;
+                        }
                     }
                 }
 
@@ -334,6 +370,7 @@
                         color: #DDA122;
                         display: flex;
                         align-items: center;
+                        gap: 0 4px;
                         font-size: 16px;
                         line-height: 24px;
                         font-weight: 500;
@@ -341,9 +378,6 @@
                         border: 0;
                         box-shadow: none;
                         padding: 0;
-                        img {
-                            transform: rotate(-90deg);
-                        }
                     }
                 }
             }

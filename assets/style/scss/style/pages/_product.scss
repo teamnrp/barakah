@@ -28,7 +28,7 @@
         }
     
         .imageBlock {
-            min-height: 200px;
+            min-height: 225px;
             border-radius: 10px;
             overflow: hidden;
             background: #F1F5F9;
@@ -38,6 +38,7 @@
             margin: 0 0 24px;
             @media (min-width: $small-screen) {
                 width: 360px;
+                margin: 0;
             }
         }
 

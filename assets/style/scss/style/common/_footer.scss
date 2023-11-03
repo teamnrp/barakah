@@ -14,7 +14,7 @@
         .footerContent {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            gap: 20px 30px;
+            gap: 36px 30px;
             padding: 16px 20px;
             @media (min-width: $small-screen) {
                 padding: 40px;
@@ -29,9 +29,10 @@
                     font-style: normal;
                     font-weight: 700;
                     line-height: 22px;
-                    margin-bottom: 40px;
+                    margin-bottom: 28px;
                     @media (min-width: $small-screen) {
                         font-size: 24px;
+                        margin-bottom: 40px;
                         line-height: 28px;
                     }
 
@@ -40,16 +41,21 @@
                         position: absolute;
                         bottom: -18px;
                         left: 0;
-                        width: 90px;
-                        height: 6px;
+                        width: 60px;
+                        height: 4px;
                         border-radius: 100px;
                         background: #E8BF69;
+                        @media (min-width: $small-screen) {
+                            width: 90px;
+                            height: 6px;
+                        }
                     }
                 }
 
                 .footerNavList {
                     display: flex;
                     flex-direction: column;
+                    align-items: flex-start;
                     gap: 12px 0;
 
                     .footerLink {
@@ -59,6 +65,9 @@
                         font-weight: 500;
                         line-height: 24px;
                         margin: 0;
+                        &:hover {
+                            color: #E8BF69;
+                        }
                         @media (min-width: $small-screen) {
                             font-size: 16px;
                         }

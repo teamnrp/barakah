@@ -1921,7 +1921,7 @@ input[type=number] {
 
 @font-face {
   font-family: "Satoshi";
-  src: url("../../../fonts/satoshi-variable.woff2") format("woff2"), url("../../../fonts/satoshi-variable.woff") format("woff"), url("../../../fonts/satoshi-variable.ttf") format("truetype");
+  src: url("../fonts/satoshi-variable.woff2") format("woff2"), url("../fonts/satoshi-variable.woff") format("woff"), url("../fonts/satoshi-variable.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
@@ -2399,11 +2399,11 @@ li {
 }
 @media (max-width: 768px) {
   .bannerContainer {
-    margin-bottom: 15px;
-    padding: 40px 0 16px 0;
+    margin-bottom: 0;
+    padding: 50px 0 40px 0;
   }
   .bannerContainer.homeBanner {
-    padding: 70px 0 16px 0;
+    padding: 85px 0 16px 0;
   }
 }
 .bannerContainer::after {
@@ -2431,26 +2431,26 @@ li {
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  .bannerContainer .bannerBlock .imageBlock.contactBanner {
-    height: 210px;
-  }
-}
-@media (max-width: 768px) {
   .bannerContainer .bannerBlock .imageBlock {
-    height: 460px;
+    height: 328px;
   }
   .bannerContainer .bannerBlock .imageBlock img {
     max-width: none;
     height: 100%;
   }
 }
+.bannerContainer .bannerBlock .imageBlock.innerBanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+}
 .bannerContainer .bannerBlock .bannerContent {
   position: absolute;
   top: -50px;
   left: 0;
-}
-.bannerContainer .bannerBlock .bannerContent.innerBanner {
-  top: -10px;
 }
 @media (min-width: 992px) {
   .bannerContainer .bannerBlock .bannerContent {
@@ -2487,25 +2487,97 @@ li {
   border-radius: 0 0 15px 0;
   font-size: 28px;
   line-height: 40px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0px 30px 10px 0;
+  position: relative;
+}
+.bannerContainer .bannerBlock .bannerContent .titleBlock .heading .headingText:after {
+  content: "";
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  border-radius: 15px 0px 0px 0px;
+  box-shadow: -5px -5px 0px 0 #3b3b3b;
+  transform: translate(30px, 20px);
+}
+.bannerContainer .bannerBlock .bannerContent .titleBlock .heading .headingText:first-child::after {
+  top: 0;
+}
+.bannerContainer .bannerBlock .bannerContent .titleBlock .heading .headingText:nth-child(3):before {
+  content: "";
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  bottom: 0;
+  left: -30px;
+  border-radius: 15px 0px 0px 0px;
+  box-shadow: -5px -5px 0px 0 #3b3b3b;
+  transform: translate(30px, 20px);
 }
 @media (min-width: 992px) {
   .bannerContainer .bannerBlock .bannerContent .titleBlock .heading .headingText {
-    font-size: 50px;
+    font-size: 56px;
     line-height: 84px;
+    padding: 0px 50px 15px 0;
   }
 }
+.bannerContainer .bannerBlock .bannerContent.innerBanner {
+  top: -10px;
+}
+.bannerContainer .bannerBlock .bannerContent.innerBanner .titleBlock .heading .headingText:first-child::after {
+  top: -10px;
+}
+.bannerContainer .bannerBlock .bannerContent.innerBanner .titleBlock .heading .headingText:first-child:before {
+  content: "";
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  bottom: 0;
+  left: -30px;
+  border-radius: 15px 0px 0px 0px;
+  box-shadow: -5px -5px 0px 0 #3b3b3b;
+  transform: translate(30px, 20px);
+}
 .bannerContainer .bannerBlock .bannerContent .btnBlock {
-  padding: 10px 30px 30px 0;
+  padding: 10px 50px 40px 0;
   background-color: #3B3B3B;
   border-radius: 0 0 15px 0;
   display: inline-block;
+  position: relative;
+}
+.bannerContainer .bannerBlock .bannerContent .btnBlock:after {
+  content: "";
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  border-radius: 15px 0px 0px 0px;
+  box-shadow: -5px -5px 0px 0 #3b3b3b;
+  transform: translate(30px, 20px);
+}
+.bannerContainer .bannerBlock .bannerContent .btnBlock:before {
+  content: "";
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  bottom: 0;
+  left: -30px;
+  border-radius: 15px 0px 0px 0px;
+  box-shadow: -5px -5px 0px 0 #3b3b3b;
+  transform: translate(30px, 20px);
 }
 .bannerContainer .bannerBlock .bannerContent .btnBlock.showInMobile {
   display: flex !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .bannerContainer .bannerBlock .bannerContent .btnBlock.showInMobile {
     display: none !important;
   }
@@ -2513,7 +2585,7 @@ li {
 .bannerContainer .bannerBlock .bannerContent .btnBlock.hideInMobile {
   display: none !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .bannerContainer .bannerBlock .bannerContent .btnBlock.hideInMobile {
     display: inline-block !important;
   }
@@ -2525,7 +2597,13 @@ li {
   box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
   display: flex;
   gap: 0 10px;
+  width: 100%;
   color: #000;
+}
+@media (min-width: 767px) {
+  .bannerContainer .bannerBlock .bannerContent .btnBlock .btn {
+    width: 328px;
+  }
 }
 .bannerContainer .bannerBlock .btnBlock {
   padding: 20px 0px 20px 0;
@@ -2557,14 +2635,23 @@ li {
   box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
   display: flex;
   gap: 0 10px;
+  width: 100%;
+  height: 40px;
   color: #000;
 }
+.bannerContainer .bannerBlock .btnBlock .btn:hover {
+  background-color: #E8BF69;
+  border: 1px solid #E8BF69;
+}
+@media (min-width: 767px) {
+  .bannerContainer .bannerBlock .btnBlock .btn {
+    width: 328px;
+    height: 50px;
+  }
+}
 .bannerContainer .bannerBlock .textBlock {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 14px;
+  position: relative;
+  padding: 60px 14px 14px;
 }
 @media (min-width: 767px) {
   .bannerContainer .bannerBlock .textBlock {
@@ -2576,8 +2663,11 @@ li {
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 24px;
   margin: 0;
+  min-height: 300px;
+  display: flex;
+  align-items: flex-end;
 }
 @media (min-width: 767px) {
   .bannerContainer .bannerBlock .textBlock .text {
@@ -2720,7 +2810,7 @@ li {
 .footerContainer .footer .footerContent {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 20px 30px;
+  gap: 36px 30px;
   padding: 16px 20px;
 }
 @media (min-width: 767px) {
@@ -2736,11 +2826,12 @@ li {
   font-style: normal;
   font-weight: 700;
   line-height: 22px;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 @media (min-width: 767px) {
   .footerContainer .footer .footerContent .navColumn .title {
     font-size: 24px;
+    margin-bottom: 40px;
     line-height: 28px;
   }
 }
@@ -2749,14 +2840,21 @@ li {
   position: absolute;
   bottom: -18px;
   left: 0;
-  width: 90px;
-  height: 6px;
+  width: 60px;
+  height: 4px;
   border-radius: 100px;
   background: #E8BF69;
+}
+@media (min-width: 767px) {
+  .footerContainer .footer .footerContent .navColumn .title::after {
+    width: 90px;
+    height: 6px;
+  }
 }
 .footerContainer .footer .footerContent .navColumn .footerNavList {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 12px 0;
 }
 .footerContainer .footer .footerContent .navColumn .footerNavList .footerLink {
@@ -2766,6 +2864,9 @@ li {
   font-weight: 500;
   line-height: 24px;
   margin: 0;
+}
+.footerContainer .footer .footerContent .navColumn .footerNavList .footerLink:hover {
+  color: #E8BF69;
 }
 @media (min-width: 767px) {
   .footerContainer .footer .footerContent .navColumn .footerNavList .footerLink {
@@ -2796,7 +2897,7 @@ li {
   border-radius: 20px;
   overflow: hidden;
   display: grid;
-  gap: 20px 40px;
+  gap: 20px 90px;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
 }
@@ -2854,6 +2955,19 @@ li {
 @media (max-width: 768px) {
   .section .sectionContainer .contentBlock .titleBlock::after {
     bottom: -12px;
+    width: 60px;
+    height: 4px;
+  }
+}
+.section .sectionContainer .contentBlock .textBlock .h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+@media (min-width: 767px) {
+  .section .sectionContainer .contentBlock .textBlock .h3 {
+    font-size: 24px;
+    line-height: 28px;
   }
 }
 .section .sectionContainer .contentBlock .textBlock .text {
@@ -2890,18 +3004,30 @@ li {
   display: flex;
   justify-content: center;
   position: relative;
-  margin-bottom: 75px;
+  margin-bottom: 42px;
+}
+@media (min-width: 767px) {
+  .section .sectionContainer.ourProduct .titleBlock {
+    margin-bottom: 75px;
+  }
 }
 .section .sectionContainer.ourProduct .titleBlock::after {
   content: "";
   position: absolute;
-  bottom: -18px;
+  bottom: -12px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 90px;
-  height: 6px;
+  width: 60px;
+  height: 4px;
   border-radius: 100px;
   background: #E8BF69;
+}
+@media (min-width: 767px) {
+  .section .sectionContainer.ourProduct .titleBlock::after {
+    width: 90px;
+    height: 6px;
+    bottom: -18px;
+  }
 }
 .section .sectionContainer.ourProduct .sliderBlock {
   margin-bottom: 30px;
@@ -2909,6 +3035,7 @@ li {
 .section .sectionContainer.ourProduct .sliderBlock .textBlock .text {
   max-height: 75px;
   overflow: hidden;
+  margin: 0 0 8px;
 }
 .section .sectionContainer.ourProduct .btnBlock {
   display: flex;
@@ -2920,6 +3047,18 @@ li {
   display: flex;
   align-items: center;
   gap: 0 10px;
+  width: 100%;
+  height: 40px;
+}
+.section .sectionContainer.ourProduct .btnBlock .btn:hover {
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+@media (min-width: 767px) {
+  .section .sectionContainer.ourProduct .btnBlock .btn {
+    width: 328px;
+    height: 50px;
+  }
 }
 .section .sectionContainer.ourLocation {
   display: block;
@@ -2949,28 +3088,46 @@ li {
 }
 .section .sectionContainer.ceoMessage .titleBlock {
   display: flex;
-  justify-content: center;
   position: relative;
-  margin-bottom: 75px;
+  margin-bottom: 42px;
+}
+@media (min-width: 767px) {
+  .section .sectionContainer.ceoMessage .titleBlock {
+    justify-content: center;
+  }
 }
 .section .sectionContainer.ceoMessage .titleBlock::after {
   content: "";
   position: absolute;
   bottom: -18px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 90px;
-  height: 6px;
+  left: 0;
+  width: 60px;
+  height: 4px;
   border-radius: 100px;
   background: #E8BF69;
 }
+@media (min-width: 767px) {
+  .section .sectionContainer.ceoMessage .titleBlock::after {
+    width: 90px;
+    height: 6px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
 .section .sectionContainer.ceoMessage .textBlock .text {
   color: #64748B;
-  text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 24px;
+  margin: 0;
+}
+@media (min-width: 767px) {
+  .section .sectionContainer.ceoMessage .textBlock .text {
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 .section .sliderBlock {
   display: flex;
@@ -2998,33 +3155,20 @@ li {
   height: 40px;
   border-radius: 100%;
   overflow: hidden;
-  background: #E8BF69;
+  background-color: #E8BF69;
+  background-image: url("../images/arrow_forward.png");
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
   top: 50%;
   border: 0;
 }
-.section .sliderBlock .slide-arrow::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: transparent #000 #000 transparent;
-}
 .section .sliderBlock .slide-arrow.slick-prev {
   left: -24px;
-}
-.section .sliderBlock .slide-arrow.slick-prev::after {
-  transform: translate(-30%, -50%) rotate(135deg);
+  transform: rotate(180deg);
 }
 .section .sliderBlock .slide-arrow.slick-next {
   right: -24px;
-}
-.section .sliderBlock .slide-arrow.slick-next::after {
-  transform: translate(-70%, -50%) rotate(-45deg);
 }
 .section .sliderBlock .slick-slide {
   height: auto;
@@ -3067,17 +3211,28 @@ li {
 }
 .section .sliderBlock .sliderItem .slideCard .titleBlock {
   justify-content: flex-start;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
+}
+@media (min-width: 767px) {
+  .section .sliderBlock .sliderItem .slideCard .titleBlock {
+    margin-bottom: 36px;
+  }
 }
 .section .sliderBlock .sliderItem .slideCard .titleBlock::after {
   left: 0;
   transform: translate(0, 0);
 }
 .section .sliderBlock .sliderItem .slideCard .titleBlock .h3 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   color: #0F172A;
-  line-height: 28px;
+  line-height: 22px;
+}
+@media (min-width: 767px) {
+  .section .sliderBlock .sliderItem .slideCard .titleBlock .h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
 .section .sliderBlock .sliderItem .slideCard .textBlock {
   flex-grow: 1;
@@ -3095,6 +3250,7 @@ li {
   color: #DDA122;
   display: flex;
   align-items: center;
+  gap: 0 4px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -3102,9 +3258,6 @@ li {
   border: 0;
   box-shadow: none;
   padding: 0;
-}
-.section .sliderBlock .sliderItem .slideCard .btnBlock .btn-lnk img {
-  transform: rotate(-90deg);
 }
 .section .sliderBlock .slick-dots {
   display: flex;
@@ -3247,7 +3400,7 @@ li {
   }
 }
 .productList .productCard .imageBlock {
-  min-height: 200px;
+  min-height: 225px;
   border-radius: 10px;
   overflow: hidden;
   background: #F1F5F9;
@@ -3259,6 +3412,7 @@ li {
 @media (min-width: 767px) {
   .productList .productCard .imageBlock {
     width: 360px;
+    margin: 0;
   }
 }
 @media (min-width: 767px) {
@@ -3346,11 +3500,12 @@ li {
 .contactList {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 54px 32px;
+  gap: 36px 32px;
 }
 @media (min-width: 767px) {
   .contactList {
     grid-template-columns: repeat(2, 1fr);
+    gap: 54px 32px;
   }
 }
 .contactList .contactCard {
@@ -3365,7 +3520,7 @@ li {
 .contactList .contactCard .imageBlock {
   height: 50px;
   width: 50px;
-  border-radius: 2px;
+  border-radius: 6px;
   background: #E8BF69;
   overflow: hidden;
   display: flex;

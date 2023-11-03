@@ -4,27 +4,29 @@ const dispatch = {
     productSlider() {
         $('.sliderBlock').slick({
             infinite: true,
-            dots: false,
+            dots: true,
             arrows: true,
             slidesToShow: 3,
-            slidesToScroll: 1,
+            slidesToScroll: 3,
             prevArrow: '<button class="slide-arrow slick-prev material-icons-outlined"></button>',
             nextArrow: '<button class="slide-arrow slick-next material-icons-outlined"></button>',
             responsive: [
                 {
                     breakpoint: 1450,
                     settings: {
-                        dots: false,
+                        dots: true,
                         arrows: true,
                         slidesToShow: 3,
+                        slidesToScroll: 3,
                     },
                 },
                 {
                     breakpoint: 1100,
                     settings: {
-                        dots: false,
+                        dots: true,
                         arrows: true,
                         slidesToShow: 2,
+                        slidesToScroll: 2,
                     },
                 },
                 {
@@ -33,6 +35,7 @@ const dispatch = {
                         dots: true,
                         arrows: false,
                         slidesToShow: 2,
+                        slidesToScroll: 2,
                     },
                 },
                 {
@@ -41,6 +44,7 @@ const dispatch = {
                         dots: true,
                         arrows: false,
                         slidesToShow: 1,
+                        slidesToScroll: 1,
                     },
                 },
             ],
